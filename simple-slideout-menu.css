@@ -1,0 +1,83 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  /*
+    Required for this, but also just good practice.
+    See http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+  */
+}
+
+#site-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 600px
+}
+
+#site-wrapper #site-canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden
+}
+
+#site-wrapper #site-canvas #site-menu {
+  width: 265px;
+  position: absolute;
+  top: 0;
+  left: -265px;
+  border-right: solid 1px #eee;
+  padding: 0 15px 20px;
+  height: 100%;
+}
+
+#site-wrapper #site-canvas #site-menu header {
+  margin: 0 -15px 25px
+}
+
+#site-wrapper #site-canvas #site-content {
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  padding: 0 15px 20px;
+}
+
+#site-wrapper #site-canvas #site-content #site-content-overlay {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1010;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  opacity: 0;
+  filter: alpha(opacity=0)
+}
+
+#site-wrapper.show-menu #site-canvas {
+  -webkit-transform: translate(265px, 0);
+  -ms-transform: translate(265px, 0);
+  -o-transform: translate(265px, 0);
+  transform: translate(265px, 0);
+  -webkit-transform: translate3d(265px, 0, 0);
+  transform: translate3d(265px, 0, 0);
+}
+
+#site-wrapper.show-menu #site-canvas #site-content #site-content-overlay {
+  visibility: visible;
+}

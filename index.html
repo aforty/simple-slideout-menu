@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Simple Slideout Menu</title>
+  <meta name="description" content="This page contains a very simple slideout menu.">
+  <meta name="author" content="Arno Fortelny">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="simple-slideout-menu.css" />
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="simple-slideout-menu.js"></script>
+</head>
+
+<body>
+  <div id="site-wrapper">
+    <div id="site-canvas">
+      <div id="site-menu">
+        <h1>Simple Menu</h1>
+        
+        <p>
+          <a href="#" data-dismiss="menu">Close</a> the menu with a link.
+        </p>
+        <p>
+          <button class="btn" data-dismiss="menu">Close</button> the menu with a button.
+        </p>
+        <p>
+          <button class="btn" id="close">Close</button> the menu with javascript.
+        </p>
+        <p>
+          Or just click anywhere outside the menu.
+        </p>
+      </div>
+      <div id="site-content">
+        <div id="site-content-overlay"></div>
+
+        <h1>Simple Page</h1>
+        <p>
+          <a href="#" data-toggle="menu">Open</a> the menu with a link.
+        </p>
+        <p>
+          <button class="btn" data-toggle="menu">Open</button> the menu with a button.
+        </p>
+        <p>
+          <button class="btn" id="open">Open</button> the menu with javascript.
+        </p>
+
+        <!-- start hipsum -->
+        <p>Lo-fi narwhal Schlitz plaid tofu. Selvage wolf Williamsburg hoodie typewriter. Chambray jean shorts single-origin coffee deep v, raw denim 8-bit heirloom authentic irony banjo XOXO. Chia artisan selvage Williamsburg direct trade flexitarian, scenester Neutra selfies locavore chambray. Squid butcher mumblecore mlkshk Marfa, crucifix post-ironic single-origin coffee. Marfa crucifix Wes Anderson, tattooed 8-bit readymade 90's biodiesel chia PBR&B chambray Banksy small batch. High Life occupy umami Pitchfork, jean shorts roof party sartorial mlkshk leggings normcore flexitarian Vice kitsch irony.</p>
+
+        <p>Synth asymmetrical paleo wayfarers 90's, kitsch art party irony mumblecore church-key pop-up. Mumblecore Vice mixtape McSweeney's cray. IPhone gluten-free Wes Anderson kale chips mixtape, stumptown you probably haven't heard of them Neutra organic fingerstache. Cosby sweater tofu Brooklyn, lo-fi Godard Schlitz cliche. Neutra freegan sartorial, skateboard polaroid mumblecore gastropub fanny pack twee distillery lo-fi Schlitz semiotics Helvetica. Drinking vinegar messenger bag Bushwick VHS High Life lomo. Deep v authentic trust fund, organic semiotics four loko quinoa Blue Bottle asymmetrical Bushwick pug.</p>
+
+        <p>Fap flexitarian meh literally. Thundercats Carles flexitarian Wes Anderson ethical kale chips. Chambray hashtag literally bicycle rights. Disrupt pour-over squid selfies, Wes Anderson mustache iPhone small batch. Cardigan direct trade distillery, gastropub photo booth High Life Truffaut literally fixie. Pitchfork flannel Blue Bottle, authentic ugh scenester readymade meh meggings Echo Park asymmetrical hella Pinterest. Tonx bespoke Etsy, High Life Intelligentsia pop-up Blue Bottle Shoreditch Neutra Helvetica +1 street art.</p>
+
+        <p>Quinoa food truck pickled direct trade lomo, VHS umami biodiesel. Keffiyeh Shoreditch distillery DIY, iPhone four loko dreamcatcher hashtag wolf. Keytar PBR try-hard you probably haven't heard of them, blog butcher pug. Cred heirloom hashtag organic forage vegan Thundercats fixie, leggings craft beer pork belly art party church-key. Schlitz normcore tousled, distillery mustache iPhone fap. Blog chia Carles letterpress Tumblr, organic tattooed yr tilde. Skateboard selfies salvia cornhole beard.</p>
+
+        <p>Blue Bottle kogi asymmetrical, Brooklyn irony PBR four loko wayfarers food truck put a bird on it Cosby sweater keffiyeh heirloom Portland High Life. Roof party fashion axe sartorial locavore mumblecore. Mlkshk Schlitz pour-over jean shorts gastropub, slow-carb Shoreditch forage pork belly small batch disrupt quinoa PBR&B Kickstarter photo booth. Lo-fi wayfarers mustache flannel Neutra, brunch Carles retro art party. Shabby chic organic Thundercats, gluten-free Williamsburg normcore tousled bitters drinking vinegar readymade cardigan mumblecore gastropub. Hella hoodie fanny pack, yr squid pug chambray Carles lo-fi photo booth tattooed sriracha pour-over stumptown before they sold out. Squid butcher YOLO artisan Pinterest shabby chic, bitters asymmetrical Echo Park PBR Brooklyn lo-fi sustainable.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('#open').on('click', function (e) { e.stopPropagation(); $(document).trigger('menu.open'); });
+    $('#close').on('click', function (e) { e.stopPropagation(); $(document).trigger('menu.close'); });
+  </script>
+</body>
+</html>
