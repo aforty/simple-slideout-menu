@@ -23,9 +23,12 @@
     };
 
   $(document)
+    .on('touchend.menu.open', '[data-toggle="menu"]', showMenu)
+    .on('touchend.menu.close', '[data-dismiss="menu"]', hideMenu)
     .on('click.menu.open', '[data-toggle="menu"]', showMenu)
     .on('click.menu.close', '[data-dismiss="menu"]', hideMenu)
     .on('menu.close', hideMenu)
-    .on('menu.open', showMenu);
+    .on('menu.open', showMenu)
+    .on('page:change', hideMenu);
 
 }(jQuery);
